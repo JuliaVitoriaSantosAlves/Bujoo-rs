@@ -1,19 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BarChart from '../../components/BarChart/BarChart';
-
-interface Expense {
-  id: number;
-  amount: number;
-  category: string;
-  date: string;
-}
-
-interface Income {
-  id: number;
-  amount: number;
-  source: string;
-  date: string;
-}
+import { Expense } from '../../interfaces/Expense.types';
+import { Income } from '../../interfaces/Income.types';
 
 type Transaction = Expense | Income;
 
@@ -49,7 +37,6 @@ const OverviewPage: React.FC = () => {
       return acc;
     }, {});
 
-    // Ordena as categorias por valor para melhor visualização
     const sortedCategories = Object.entries(counts).sort(([, a], [, b]) => b - a);
 
     return sortedCategories;

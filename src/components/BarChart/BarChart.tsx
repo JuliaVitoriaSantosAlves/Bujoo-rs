@@ -1,12 +1,6 @@
 import React from 'react';
+import { BarChartProps} from '../../interfaces/BarChart.types';
 import './BarChart.css';
-
-interface BarChartProps {
-  label: string;
-  value: number;
-  maxValue: number;
-  color: string;
-}
 
 const BarChart: React.FC<BarChartProps> = ({ label, value, maxValue, color }) => {
   const barFillHeight = (value / maxValue) * 100;

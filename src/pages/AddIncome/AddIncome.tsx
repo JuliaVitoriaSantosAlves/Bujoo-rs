@@ -2,30 +2,26 @@ import React, { useState, useEffect } from 'react';
 
 const AddIncome: React.FC = () => {
   const [amount, setAmount] = useState<number>(0);
-  const [source, setSource] = useState<string>(''); // 'source' para a origem da receita
+  const [source, setSource] = useState<string>('');
   const [date, setDate] = useState<string>('');
   const [error, setError] = useState<string>('');
 
-  // Função para adicionar uma nova receita
   const addIncome = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validação simples
     if (amount <= 0 || !source || !date) {
       setError('Por favor, preencha todos os campos corretamente.');
       return;
     }
-
-    // Nova receita
     const newIncome = {
-      id: Date.now(), // Gerar um ID único
+      id: Date.now(),
       amount,
       source,
       date,
     };
 
     try {
-      await fetch('http://localhost:5000/incomes', { // Endpoint para adicionar receitas
+      await fetch('http://localhost:5000/incomes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,24 +31,23 @@ const AddIncome: React.FC = () => {
       alert('Receita adicionada com sucesso!');
       setAmount(0);
       setSource('');
-      setDate(getCurrentDate()); // Reseta para a data atual
+      setDate(getCurrentDate());
     } catch (error) {
       console.error('Erro ao adicionar receita:', error);
       setError('Erro ao adicionar receita. Tente novamente.');
     }
   };
 
-  // Função para obter a data atual no formato YYYY-MM-DD
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0'); // Mês começa em 0
+    const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
 
   useEffect(() => {
-    setDate(getCurrentDate()); // Define a data inicial para a data atual
+    setDate(getCurrentDate());
   }, []);
 
   return (

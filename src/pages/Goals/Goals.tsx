@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
-interface Goal {
-  id: string;
-  target: number;
-  current: number;
-  isCompleted: boolean;
-  description: string;
-  duration: string; // Novo campo para a duração da meta
-}
+import { Goal } from '../../interfaces/Goal.types';
 
 const Goals: React.FC = () => {
   const [goals, setGoals] = useState<Goal[]>([]);
   const [newGoalValue, setNewGoalValue] = useState<number>(0);
   const [newGoalDescription, setNewGoalDescription] = useState<string>('');
-  const [newGoalDuration, setNewGoalDuration] = useState<string>('short'); // Padrão: Curto Prazo
+  const [newGoalDuration, setNewGoalDuration] = useState<string>('short');
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [amountToAdd, setAmountToAdd] = useState<number>(0);
 
@@ -71,7 +63,7 @@ const Goals: React.FC = () => {
           current: 0,
           isCompleted: false,
           description: newGoalDescription,
-          duration: newGoalDuration, // Enviar a duração da meta
+          duration: newGoalDuration,
         }),
       });
       setNewGoalValue(0);

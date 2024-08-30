@@ -6,19 +6,16 @@ const AddExpense: React.FC = () => {
   const [date, setDate] = useState<string>('');
   const [error, setError] = useState<string>('');
 
-  // Função para adicionar uma nova despesa
   const addExpense = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validação simples
     if (amount <= 0 || !category || !date) {
       setError('Por favor, preencha todos os campos corretamente.');
       return;
     }
 
-    // Nova despesa
     const newExpense = {
-      id: Date.now(), // Gerar um ID único
+      id: Date.now(),
       amount,
       category,
       date,
@@ -35,24 +32,23 @@ const AddExpense: React.FC = () => {
       alert('Despesa adicionada com sucesso!');
       setAmount(0);
       setCategory('');
-      setDate(getCurrentDate()); // Reseta para a data atual
+      setDate(getCurrentDate());
     } catch (error) {
       console.error('Erro ao adicionar despesa:', error);
       setError('Erro ao adicionar despesa. Tente novamente.');
     }
   };
 
-  // Função para obter a data atual no formato YYYY-MM-DD
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0'); // Mês começa em 0
+    const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
   };
 
   useEffect(() => {
-    setDate(getCurrentDate()); // Define a data inicial para a data atual
+    setDate(getCurrentDate());
   }, []);
 
   return (
@@ -88,7 +84,9 @@ const AddExpense: React.FC = () => {
               <option value="Lazer">Lazer</option>
               <option value="Saúde">Saúde</option>
               <option value="Educação">Educação</option>
-              <option value="Outros">Outros</option>
+              <option value="Contas de luz">Contas de luz</option>
+              <option value="Contas de água">Contas de água</option>
+              <option value="Imprevistos">Imprevistos</option>
             </select>
           </div>
           <div>

@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './DebtControl.css';
-
-interface Debt {
-  id: string;
-  amount: number;
-  interestRate: number;
-  dueDate: string;
-  installments: number;
-  paidInstallments: number;
-  isPaid: boolean;
-}
+import { Debt } from '../../interfaces/Debt.types';
 
 const DebtControl: React.FC = () => {
   const [debts, setDebts] = useState<Debt[]>([]);
@@ -47,7 +38,7 @@ const DebtControl: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          id: Date.now().toString(), // Convertendo para string aqui
+          id: Date.now().toString(),
           amount: newDebtAmount,
           interestRate: newDebtInterestRate,
           dueDate: newDebtDueDate,

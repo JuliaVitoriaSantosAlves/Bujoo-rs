@@ -6,14 +6,11 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Too
 
 interface ExpensesChartProps {
   expensesByDate: Record<string, number>;
-  incomesByDate: Record<string, number>; // Nova propriedade para receitas
+  incomesByDate: Record<string, number>;
 }
 
 const ExpensesChart: React.FC<ExpensesChartProps> = ({ expensesByDate, incomesByDate }) => {
-  // Ordenar as datas para garantir que as linhas sejam comparáveis e no mesmo intervalo de tempo
   const allDates = Array.from(new Set([...Object.keys(expensesByDate), ...Object.keys(incomesByDate)])).sort();
-
-  // Mapear os valores de despesas e receitas para todas as datas, preenchendo com 0 quando não houver valor
   const expensesData = allDates.map(date => expensesByDate[date] || 0);
   const incomesData = allDates.map(date => incomesByDate[date] || 0);
 

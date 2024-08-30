@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
-interface Expense {
-  id: number;
-  amount: number;
-  category: string;
-  date: string;
-}
-
-interface Income {
-  id: number;
-  amount: number;
-  source: string;
-  date: string;
-}
-
-interface MonthlySummary {
-  month: string;
-  finalBalance: number;
-}
+import { Expense } from '../../interfaces/Expense.types';
+import { Income } from '../../interfaces/Income.types';
+import { MonthlySummary } from '../../interfaces/MonthlySummary.types';
 
 const AnnualSummary: React.FC = () => {
   const [monthlySummaries, setMonthlySummaries] = useState<MonthlySummary[]>([]);

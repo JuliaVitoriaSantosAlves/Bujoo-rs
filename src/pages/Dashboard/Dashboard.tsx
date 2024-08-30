@@ -1,25 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ExpensesChart from '../../components/ExpensesChart';
-
-interface Expense {
-  id: number;
-  amount: number;
-  category: string;
-  date: string;
-}
-
-interface Income {
-  id: number;
-  amount: number;
-  source: string;
-  date: string;
-}
+import { Expense } from '../../interfaces/Expense.types';
+import { Income } from '../../interfaces/Income.types';
 
 const Dashboard: React.FC = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [incomes, setIncomes] = useState<Income[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [selectedMonth, setSelectedMonth] = useState<string>(new Date().toISOString().slice(0, 7)); // Padrão: mês atual
+  const [selectedMonth, setSelectedMonth] = useState<string>(new Date().toISOString().slice(0, 7));
 
   useEffect(() => {
     const fetchData = async () => {
