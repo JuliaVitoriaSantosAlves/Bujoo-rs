@@ -1,0 +1,38 @@
+{
+  "expenses": [
+    {
+      "id": 1725026585428,
+      "amount": 23,
+      "category": "Compras",
+      "date": "2024-08-30"
+    },
+    {
+      "id": 1725026605258,
+      "amount": 45,
+      "category": "Transporte",
+      "date": "2024-08-29"
+    }
+  ],
+  "goals": [
+    {
+      "id": "7554",
+      "target": 25,
+      "current": 25,
+      "isCompleted": true,
+      "description": "a",
+      "duration": "medium"
+    }
+  ],
+  "incomes": [],
+  "debts": [
+    {
+      "id": "1725026668760",
+      "amount": 250,
+      "interestRate": 9000,
+      "dueDate": "2024-08-29",
+      "installments": 3,
+      "paidInstallments": 3,
+      "isPaid": true
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+.DebtControl-content {
+    margin-left: 20vw
+  }
+  
+  .DebtControl-form {
+    margin-bottom: 20px;
+  }
+  
+  .DebtControl-form div {
+    margin-bottom: 10px;
+  }
+  
+  .debts-list,
+  .payment-plan {
+    margin-top: 20px;
+  }
+  
+  .debt-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .debt-item p {
+    margin: 5px 0;
+  }
+  
+  .button-debt {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-debt:hover {
+    background-color: #45a049;
+  }
+  
+  .payment-plan {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .button-installment {
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .button-installment:hover {
+    background-color: #005f73;
+  }
+  

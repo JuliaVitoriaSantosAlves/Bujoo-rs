@@ -1,0 +1,164 @@
+:root {
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --success-color: #4CAF50;
+  --success-color-hover: #45a049;
+  --info-color: #008CBA;
+  --info-color-hover: #005f73;
+  --background-color: #f8f9fa;
+  --light-bg-color: #f9f9f9;
+  --border-color: #ddd;
+  --completed-bg-color: #d4edda;
+  --completed-border-color: #c3e6cb;
+  --font-size-large: large;
+  --font-weight-bold: 500;
+  --container-padding: 20px;
+  --content-width: 90vw;
+  --left-margin: 20vw;
+}
+
+.app-container {
+  display: flex;
+}
+
+.content-container {
+  flex: 1;
+  width: var(--content-width);
+  padding: var(--container-padding);
+  overflow-y: auto;
+  background-color: var(--background-color);
+}
+
+.overview-container,
+.Goals-content,
+.DebtControl-content,
+.dashboard-container,
+.AnnualSummary-content,
+.addExpense-container {
+  margin-left: var(--left-margin);
+  padding: var(--container-padding);
+}
+
+.overview-section,
+.Goals-form,
+.DebtControl-form,
+.debt-item,
+.payment-plan,
+.addExpense-form,
+.annual-summary-table {
+  margin-bottom: 20px;
+}
+
+.overview-section h2,
+.dashboard-container h2,
+.addExpense-container h2 {
+  margin-bottom: 15px;
+}
+
+.Goals-form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  height: 9vh;
+}
+
+.Goals-form label,
+.debt-item p,
+.label {
+  margin-left: 15px;
+}
+
+.goal-item,
+.debt-item {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--light-bg-color);
+}
+
+.goal-item.completed {
+  background-color: var(--completed-bg-color);
+  border-color: var(--completed-border-color);
+}
+
+.button-goals,
+.button-debt,
+.button-installment {
+  margin: auto;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-goals {
+  background-color: var(--primary-color);
+}
+
+.button-goals:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.button-debt {
+  background-color: var(--success-color);
+}
+
+.button-debt:hover {
+  background-color: var(--success-color-hover);
+}
+
+.button-installment {
+  background-color: var(--info-color);
+}
+
+.button-installment:hover {
+  background-color: var(--info-color-hover);
+}
+
+.debts-list,
+.payment-plan,
+.AnnualSummary-content,
+.annual-summary-table {
+  margin-top: 20px;
+}
+
+.payment-plan,
+.annual-summary-table th,
+.annual-summary-table td {
+  border: 1px solid var(--border-color);
+}
+
+.payment-plan,
+.annual-summary-table th {
+  background-color: var(--light-bg-color);
+}
+
+.annual-summary-table th,
+.annual-summary-table td {
+  padding: 8px;
+  text-align: center;
+}
+
+.annual-balance {
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+}
+
+button {
+  background-color: #CCC;
+  margin-top: 60px;
+}
+
+label {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+  margin-right: 25px;
+}
+
+.subtitulos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
